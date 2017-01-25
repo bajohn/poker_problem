@@ -1,0 +1,21 @@
+6 lows- always works
+5 lows, 1 high- always works
+4 lows, 2 highs- always works
+3 lows, 2 highs, 1 other- if O is next to L, doesn't work- so take O- 3/5 chance its neighbor is L, so 2/5 works
+2 lows, 2 highs, 2 other- 1/5 chance that L is next to L AND H/H are split and this works
+
+LL HO HO
+LL HH OO
+LH HO LO
+LH LH OO
+LO HH LO
+
+1 2 | 3 4 |
+
+
+A OR B
+((15/45)(14/44) + 8/45)
+
+ C OR D
+ C(A) + C(B) + D(A) + D(B)
+ ( ((rel A)*(13/43*12/42) + (1-rel A)*(15/45*14/44)) + ((rel A)(8/45)

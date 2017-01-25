@@ -1,0 +1,58 @@
+
+8 straight flush
+7 four of kind
+6 full house
+5 flush
+4 straight
+3 three of kind
+2 two pair
+1 pair 
+
+
+
+
+straight flush = 8*1M + 10k*rank of highest (careful with wheel)
+four of kind = 7*1M + 10k * rank of four (+kicker)
+full house = 6*1M + 10k * rank of three + 100 * rank of pair
+flush = 5 * 1M + 10k * rank of highest card in flush
+straight = 4 * 1M + 10k * rank of highest card in straight (careful with wheel)
+three of kind = 3*1M + 10k*rank of three of kind + 100*(kicker 1) + (kicker 2)
+two pair = 2*1M + 10k*rank of higher pair + 100*rank of lower pair + (kicker)
+pair = 1M + 10k*rank of pair + 100*( kicker 1) + (kicker 2) + .01 * (kicker 3)
+
+tie breaker:
+highest card after used cards
+
+10 10 9 8 7
+10 10 9 8 6
+
+
+
+-----
+choosing 3 hands:
+take 45 choose 6,
+then manually go through 15 possible hands from these
+
+
+------
+more efficient- must have either 2 pairs, 3 of kind, or straight
+so
+need either
+card value | value here
+2 0.5
+4 1.0
+5 0.5
+6 0.5
+7 0.5
+8 0.5
+9 1.0
+
+from the set of 6, count the number of above cards. total must be at least 3
+For example, if the 6 cards are
+2H, 4S, 8D, 7S, 10D, JC
+ the counted value is 0.5*3 + 1.0 = 2.5 so it's not possible to crack the aces
+
+But
+2H, 4S, 8S, 7S, 8D, JC
+ the counted value is 0.5*4 + 1.0 = 3.0 so it is possible to crack the aces
+ for example 2H 8H; 7S 8S; 4S JC
